@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:whoami_app/app/theme/theme.dart';
 import 'package:whoami_app/core/routing/router.dart';
 
-late AppRouter appRouter;
+late final AppRouter _appRouter;
 
-class WhoAmIAPP extends StatelessWidget {
-  const WhoAmIAPP({super.key});
+class WhoAmIApp extends StatelessWidget {
+  const WhoAmIApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    appRouter = AppRouter();
-    return MaterialApp.router(routerConfig: appRouter.config());
+    _appRouter = AppRouter();
+    return MaterialApp.router(
+      theme: whoAmIAppTheme,
+      routerConfig: _appRouter.config(),
+    );
   }
 }

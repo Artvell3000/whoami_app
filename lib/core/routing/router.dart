@@ -15,6 +15,7 @@ class AppRouter extends RootStackRouter {
   List<AutoRoute> get routes => [
     AutoRoute(
       page: AuthShellRoute.page,
+      initial: true,
       children: [
         AutoRoute(page: AuthInputEmailRoute.page),
         AutoRoute(page: AuthInputCodeRoute.page),
