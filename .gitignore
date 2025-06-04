@@ -50,6 +50,7 @@ app.*.map.json
 *.gr.dart
 *.config.dart
 /lib/gen_locales
+/lib/gen_assets
 
 # Generated directories
 /lib/**/*.g.dart
