@@ -10,10 +10,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.8
   auto_route: ^10.1.0+1
   freezed_annotation: ^3.0.0
+  intl: ^0.20.2
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -25,8 +27,8 @@ dev_dependencies:
   auto_route_generator: ^10.2.3
 
 flutter:
-
   uses-material-design: true
+  generate: true
 
   # To add assets to your application, add an assets section, like this:
   # assets:
