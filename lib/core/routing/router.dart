@@ -17,7 +17,7 @@ class AppRouter extends RootStackRouter {
       page: AuthShellRoute.page,
       initial: true,
       children: [
-        AutoRoute(page: AuthInputEmailRoute.page),
+        AutoRoute(page: AuthInputEmailRoute.page, initial: true),
         AutoRoute(page: AuthInputCodeRoute.page),
         AutoRoute(page: AuthSuccessRoute.page),
       ],

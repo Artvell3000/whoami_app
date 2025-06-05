@@ -4,14 +4,15 @@ import 'package:whoami_app/app/theme/theme.dart';
 import 'package:whoami_app/core/routing/router.dart';
 import 'package:whoami_app/gen_locales/app_localizations.dart';
 
-late final AppRouter _appRouter;
+late AppRouter _router;
 
 class WhoAmIApp extends StatelessWidget {
   const WhoAmIApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    _appRouter = AppRouter();
+    _router = AppRouter();
+
     return MaterialApp.router(
       locale: const Locale('en'),
       localizationsDelegates: const [
@@ -21,7 +22,7 @@ class WhoAmIApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       theme: whoAmIAppTheme,
-      routerConfig: _appRouter.config(),
+      routerConfig: _router.config(),
     );
   }
 }

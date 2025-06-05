@@ -7,7 +7,9 @@ final whoAmIAppTheme = ThemeData(
     style: ButtonStyle(
       elevation: WidgetStateProperty.all<double>(0),
       shape: WidgetStateProperty.all<OutlinedBorder>(
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ), // Уже 10
       ),
       backgroundColor: WidgetStateProperty.all<Color>(const Color(0xFFF2796B)),
       foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
@@ -21,7 +23,26 @@ final whoAmIAppTheme = ThemeData(
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
     fillColor: Colors.white,
-    border: InputBorder.none,
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30),
+      borderSide: BorderSide.none,
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30),
+      borderSide: BorderSide.none,
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30),
+      borderSide: BorderSide.none,
+    ),
+    errorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30),
+      borderSide: BorderSide.none,
+    ),
+    focusedErrorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30),
+      borderSide: BorderSide.none,
+    ),
     contentPadding: const EdgeInsets.symmetric(horizontal: 11),
     hintStyle: const TextStyle(
       fontSize: 13,

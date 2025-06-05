@@ -3,5 +3,19 @@
   
   "authAppBarTitle" : "Login",
 
-  "authEmailScreenTitle" : "Enter Your Email"
+  "authAppBarLabel" : "A lot of time has passed. You need to log in again.",
+
+  "authEmailTitle" : "Enter Your Email",
+
+  "authEmailHint" : "Enter Your Email",
+
+  "authEmailButtonText" : "Login",
+
+  "authCodeTitle" : "Enter The Received Code",
+
+  "authCodeHint" : "Enter The Received Code",
+
+  "authCodeButtonText" : "Verify",
+
+  "authSuccessTitle" : "Successful Authorization"
 }

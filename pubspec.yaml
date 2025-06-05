@@ -17,6 +17,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_svg: ^2.1.0
+  injectable: ^2.5.0
+  get_it: ^8.0.3
+  percent_indicator: ^4.2.5
+  logger: ^2.5.0
 
 dev_dependencies:
   flutter_test:
@@ -27,6 +31,8 @@ dev_dependencies:
   freezed: ^3.0.6
   auto_route_generator: ^10.2.3
   flutter_gen_runner: ^5.4.0
+  intl_utils: ^2.8.10
+  injectable_generator: ^2.7.0
 
 flutter:
   uses-material-design: true
@@ -34,6 +40,7 @@ flutter:
 
   assets:
     - assets/img/png/
+    - assets/img/svg/
 
 flutter_gen:
   output: lib/gen_assets/
