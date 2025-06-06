@@ -1,5 +1,7 @@
 import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
+import 'package:whoami_app/core/error/domain_error.dart';
+import 'package:whoami_app/core/error/domain_error_mapper.dart';
 import 'package:whoami_app/features/authentication/data/datasource/auth_datasource.dart';
 import 'package:whoami_app/features/authentication/domain/repository/repository.dart';
 
@@ -10,20 +12,20 @@ class AuthRepository implements IAuthRepository {
   AuthRepository(this._authDatasource);
 
   @override
-  Future<Either<Exception, void>> sendCode(String email) async {
+  Future<Either<DomainError, void>> sendCode(String email) async {
     try {
       return Right(await _authDatasource.sendCode(email));
     } on Exception catch (e) {
-      return Left(Exception(e.toString()));
+      return Left(e.toDomainError());
     }
   }
 
   @override
-  Future<Either<Exception, void>> verifyCode(String email, String code) async {
+  Future<Either<DomainError, void>> verifyCode(String email, String code) async {
     try {
       return Right(await _authDatasource.verifyCode(email, code));
     } on Exception catch (e) {
-      return Left(Exception(e.toString()));
+      return Left(e.toDomainError());
     }
   }
 }
