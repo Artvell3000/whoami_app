@@ -49,10 +49,11 @@ app.*.map.json
 *.freezed.dart
 *.gr.dart
 *.config.dart
-/lib/gen_locales
-/lib/gen_assets
+
 
 # Generated directories
+/lib/gen_locales
+/lib/gen_assets
 /lib/**/*.g.dart
 /lib/**/*.freezed.dart
 /lib/**/*.gr.dart
