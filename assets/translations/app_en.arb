@@ -5,17 +5,41 @@
 
   "authAppBarLabel" : "A lot of time has passed. You need to log in again.",
 
+  "userAppBarTitle" : "User page",
+
+  "userAppBarLabel" : "Welcome back!",
+
+
   "authEmailTitle" : "Enter Your Email",
 
   "authEmailHint" : "Enter Your Email",
 
   "authEmailButtonText" : "Login",
 
+  "authEmailEmptyError": "Email is required.",
+
+  "authEmailInvalidError": "Invalid email format.",
+
+
+
+
   "authCodeTitle" : "Enter The Received Code",
 
-  "authCodeHint" : "Enter The Received Code",
+  "authCodeHint" : "Enter Code",
 
   "authCodeButtonText" : "Verify",
 
-  "authSuccessTitle" : "Successful Authorization"
+  "authCodeEmptyError": "Code is required.",
+
+  "authCodeInvalidError": "Invalid code format.",
+
+  "authSuccessTitle" : "Successful Authorization",
+
+
+  "errorAuthCodeExpired": "Authentication code has expired",
+  "errorNoInternetConnection": "No internet connection",
+  "errorBadRequest": "Invalid request",
+  "errorUnauthorized": "Authorization required",
+  "errorServer": "Server error",
+  "errorUnknown": "Unknown error occurred"
 }

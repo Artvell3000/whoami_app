@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:whoami_app/core/routing/router_start.dart';
 import 'package:whoami_app/features/features.dart';
 
 part 'router.gr.dart';
@@ -15,13 +17,13 @@ class AppRouter extends RootStackRouter {
   List<AutoRoute> get routes => [
     AutoRoute(
       page: AuthShellRoute.page,
-      initial: true,
+      initial: RouterStart.startWithAuth,
       children: [
         AutoRoute(page: AuthInputEmailRoute.page, initial: true),
         AutoRoute(page: AuthInputCodeRoute.page),
         AutoRoute(page: AuthSuccessRoute.page),
       ],
     ),
-    AutoRoute(page: UserRoute.page),
+    AutoRoute(page: UserRoute.page, initial: !RouterStart.startWithAuth),
   ];
 }

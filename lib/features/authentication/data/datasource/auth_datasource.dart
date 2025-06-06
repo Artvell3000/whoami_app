@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
-import 'package:whoami_app/network/models/models.dart';
-import 'package:whoami_app/network/service/api_service.dart';
-import 'package:whoami_app/network/service/token_service.dart';
+import 'package:whoami_app/core/network/models/models.dart';
+import 'package:whoami_app/core/network/service/api_service.dart';
+import 'package:whoami_app/core/network/service/token_service.dart';
 
 @injectable
 class AuthDatasource {

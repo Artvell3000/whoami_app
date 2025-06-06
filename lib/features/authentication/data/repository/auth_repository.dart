@@ -21,7 +21,10 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<Either<DomainError, void>> verifyCode(String email, String code) async {
+  Future<Either<DomainError, void>> verifyCode(
+    String email,
+    String code,
+  ) async {
     try {
       return Right(await _authDatasource.verifyCode(email, code));
     } on Exception catch (e) {

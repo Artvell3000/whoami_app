@@ -16,7 +16,7 @@ abstract class RefreshJwtResponseModel with _$RefreshJwtResponseModel {
 
 @freezed
 abstract class RefreshJwtRequestModel with _$RefreshJwtRequestModel {
-  const factory RefreshJwtRequestModel({required String refreshToken}) =
+  const factory RefreshJwtRequestModel({required String token}) =
       _RefreshJwtRequestModel;
 
   factory RefreshJwtRequestModel.fromJson(Map<String, dynamic> json) =>

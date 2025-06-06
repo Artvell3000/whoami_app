@@ -19,7 +19,7 @@ class _AuthSuccessLoadingWidgetState extends State<AuthSuccessLoadingWidget>
   void initState() {
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 900),
+      duration: Duration(seconds: 5),
     );
 
     _animation =

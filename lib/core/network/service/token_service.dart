@@ -1,6 +1,6 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:injectable/injectable.dart';
-import 'package:whoami_app/network/service/token_service_config.dart';
+import 'package:whoami_app/core/network/service/token_service_config.dart';
 
 @injectable
 class TokenService {
@@ -14,7 +14,7 @@ class TokenService {
     await _storage.write(key: _refreshTokenKey, value: refreshToken);
   }
 
-  Future<String?> get accessToken async => _accessToken;
+  String? get accessToken => _accessToken;
 
   Future<String?> get refreshToken async =>
       await _storage.read(key: _refreshTokenKey);
