@@ -1,0 +1,40 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Flutter Run with Auth Clear",
+            "type": "shell",
+            "command": "flutter",
+            "args": [
+                "run",
+                "--dart-define=WITH_AUTH=true", 
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false 
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "detail": "Runs the Flutter app with --dart-define=WITH_AUTH=true"
+        },
+        {
+            "label": "Flutter Run",
+            "type": "shell",
+            "command": "flutter",
+            "args": [
+                "run",
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false 
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "detail": "Runs the Flutter app"
+        }
+    ]
+}

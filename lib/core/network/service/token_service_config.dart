@@ -1,3 +1,3 @@
 class TokenServiceConfig {
-  static const refreshTokenKey = '**********';
+  static const refreshTokenKey = 'refresh_token_key';
 }

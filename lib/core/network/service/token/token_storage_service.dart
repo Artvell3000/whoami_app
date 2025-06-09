@@ -1,10 +1,14 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:whoami_app/core/network/service/token_service_config.dart';
 
 class TokenStorageService {
+  TokenStorageService([FlutterSecureStorage? storage])
+    : _storage = storage ?? const FlutterSecureStorage();
+
   static String? _jwt;
   static String? _refreshToken;
-  String _refreshTokenKey = '******';
-  final _storage = FlutterSecureStorage();
+  final String _refreshTokenKey = TokenServiceConfig.refreshTokenKey;
+  final FlutterSecureStorage _storage;
 
   String? get jwt => _jwt;
 
@@ -21,4 +25,6 @@ class TokenStorageService {
     _jwt = jwt;
     await _storage.write(key: _refreshTokenKey, value: refreshToken);
   }
+
+  Future<void> clear() async => await _storage.delete(key: _refreshTokenKey);
 }

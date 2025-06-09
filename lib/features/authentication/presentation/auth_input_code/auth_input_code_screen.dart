@@ -73,7 +73,7 @@ class _AuthInputCodeScreenState extends State<AuthInputCodeScreen> {
                       TextFormField(
                         obscureText: true,
                         controller: _controller,
-                        keyboardType: TextInputType.visiblePassword,
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(hintText: S.authCodeHint),
                         validator: (value) {
                           if (value == null || value.isEmpty) {

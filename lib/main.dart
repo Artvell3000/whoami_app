@@ -8,10 +8,19 @@ import 'package:whoami_app/core/routing/router_start.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  const String withAuthFlag = String.fromEnvironment(
+    'WITH_AUTH',
+    defaultValue: 'false',
+  );
+
+  if (withAuthFlag == 'true') {
+    await getIt<TokenStorageService>().clear();
+  }
+
   try {
     configureDependencies();
 
-    final token = await TokenStorageService().refreshToken;
+    final token = await getIt<TokenStorageService>().refreshToken;
     if (token == null) {
       RouterStart.startWithAuth = true;
     }
