@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:whoami_app/app/app.dart';
 import 'package:whoami_app/core/di/di.dart';
-import 'package:whoami_app/core/network/service/token_service.dart';
+import 'package:whoami_app/core/network/service/token/token_storage_service.dart';
 import 'package:whoami_app/core/routing/router_start.dart';
 
 void main() async {
@@ -11,7 +11,7 @@ void main() async {
   try {
     configureDependencies();
 
-    final token = await TokenService().refreshToken;
+    final token = await TokenStorageService().refreshToken;
     if (token == null) {
       RouterStart.startWithAuth = true;
     }

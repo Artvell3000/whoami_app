@@ -1,22 +1,17 @@
 import 'package:injectable/injectable.dart';
 import 'package:whoami_app/core/network/models/models.dart';
-import 'package:whoami_app/core/network/service/api_service.dart';
-import 'package:whoami_app/core/network/service/token_service.dart';
+import 'package:whoami_app/core/network/service/token/token_api_service.dart';
 
 @injectable
 class AuthDatasource {
-  final ApiService _apiService;
-  final TokenService _tokenService;
+  final TokenApiService _apiService;
 
-  AuthDatasource(this._apiService, this._tokenService);
+  AuthDatasource(this._apiService);
 
   Future<void> sendCode(String email) async =>
       await _apiService.login(LoginRequestModel(email: email));
 
   Future<void> verifyCode(String email, String code) async {
-    final response = await _apiService.confirmCode(
-      VerifyRequestModel(email: email, code: code),
-    );
-    await _tokenService.saveTokens(response.jwt, response.refreshToken);
+    await _apiService.confirmCode(VerifyRequestModel(email: email, code: code));
   }
 }

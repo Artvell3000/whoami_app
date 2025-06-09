@@ -3,11 +3,11 @@ import 'package:retrofit/retrofit.dart';
 import 'package:whoami_app/core/network/models/models.dart';
 import 'package:whoami_app/core/network/service/api_config.dart';
 
-part 'api_service.g.dart';
+part 'token_api_service.g.dart';
 
 @RestApi(baseUrl: ApiServiceConfig.baseUrl)
-abstract class ApiService {
-  factory ApiService(Dio dio, {String? baseUrl}) = _ApiService;
+abstract class TokenApiService {
+  factory TokenApiService(Dio dio, {String? baseUrl}) = _TokenApiService;
 
   @Headers({"Content-Type": "application/json"})
   @POST("/login")
@@ -22,7 +22,4 @@ abstract class ApiService {
   Future<RefreshJwtResponseModel> refreshToken(
     @Body() RefreshJwtRequestModel request,
   );
-
-  @GET("/auth")
-  Future<AuthResponseModel> getUserId(@Header("Auth") String auth);
 }
